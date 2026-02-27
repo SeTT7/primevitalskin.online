@@ -1,0 +1,159 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Access Exclusive Content">
+<title>Exclusive Content</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5E6DA; /* tom pele elegante */
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.age-verification-container {
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.verification-title {
+    color: #B76E79; /* destaque rose premium */
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.verification-instruction {
+    color: #2A2A2A; /* preto suave */
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.quote-author {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B4F4F; /* marrom rosado discreto */
+}
+
+.primary-button, 
+#verification-cta-button {
+    background-color: #B76E79; /* destaque principal */
+    color: #ffffff;
+    border: none;
+    padding: 14px 42px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.primary-button:hover, 
+#verification-cta-button:hover {
+    background-color: #A05C67;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.cta-button-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+</style>
+</head>
+
+<body>
+<div style="display:none; visibility:hidden; opacity:0; height:0; width:0; overflow:hidden;">
+  <h2>About Skin Care and Healthy Skin Habits</h2>
+  <p>
+    This content is intended for individuals interested in improving the appearance of their skin in a healthy and responsible way. 
+    It discusses simple daily habits that may contribute to skin that looks more hydrated, balanced, and well cared for.
+  </p>
+  <p>
+    Topics include skincare routines, the importance of hydration, sun protection, balanced nutrition, and choosing appropriate cosmetic products.
+  </p>
+  <p>
+    The goal is to provide educational information about personal care and overall wellness, encouraging healthy practices that help maintain 
+    a naturally healthy-looking complexion over time.
+  </p>
+  <p>
+    This content does not replace professional medical or dermatological advice. Individual results may vary depending on skin type and personal factors.
+  </p>
+</div>
+<main class="age-verification-container">
+    <h1 class="verification-title">EXCLUSIVE CONTENT</h1>
+
+    <p class="verification-instruction">
+        “This method has already helped thousands of women.”
+        <span class="quote-author">– Paulo H.</span>
+    </p>
+    
+    <div class="cta-button-container"> 
+        <a href="#" id="verification-cta-button" class="primary-button">
+            WATCH NOW
+        </a>
+    </div>
+</main>
+
+<script>
+document.getElementById("verification-cta-button")
+  .addEventListener("click", async function(e) {
+
+    e.preventDefault();
+
+    const currentParams = window.location.search;
+
+    const response = await fetch(
+      "https://br20extraderma.endersonset11.workers.dev/",
+      { method: "POST" }
+    );
+
+    if (response.redirected) {
+      window.location.href = response.url + currentParams;
+    }
+});
+</script>
+
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+
+</body>
+</html>
